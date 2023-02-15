@@ -2,7 +2,7 @@ package org.example.stack;
 
 /**
  *
- * 基于数组实现栈,index 反应
+ * 基于数组实现栈,index反应,index指向第一个节点
  */
 public class Stack {
     int[] data;

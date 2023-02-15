@@ -1,7 +1,7 @@
 package org.example.link;
 
 /**
- * 明白节点的抽象以及head 指针的使用
+ * 明白节点的抽象以及head 指针的使用,head 指针指向第一个节点
  */
 public class LinkList {
     Node head;
