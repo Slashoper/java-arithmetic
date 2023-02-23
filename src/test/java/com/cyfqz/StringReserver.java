@@ -1,4 +1,4 @@
-package org.example;
+package com.cyfqz;
 
 public class StringReserver {
     public static void main(String[] args) {
