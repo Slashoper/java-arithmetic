@@ -2,6 +2,9 @@ package org.example.tree;
 
 import java.util.Scanner;
 
+/**
+ * @date
+ */
 public class TreeDemo {
 
     public static void main(String[] args) {
@@ -23,7 +26,7 @@ public class TreeDemo {
               case 's':
                   System.out.println("请输入你要查询的节点值");
                   key = scanner.nextInt();
-                  tree.searchNode(key);
+                  System.out.println(tree.searchNode(key).getData());
                   break;
               case 't':
                   System.out.println("请输入遍历类型[pre/in/post]");
@@ -71,11 +74,11 @@ class Tree{
         Node current = root;
         while ( current.getData() != key){
             if(current.getData() > key ){
-                current = current.rightChild;
+                current = current.leftChild;
                 if (current == null)
                     return null;
             }else{
-                current = current.leftChild;
+                current = current.rightChild;
                 if(current == null)
                     return null;
             }
@@ -105,8 +108,8 @@ class Tree{
      * 中序遍历，注意为什么要传入 Node root。因为要用到递归
      * @param root
      */
-    public static void inOrder(Node root){
-        while( root != null )
+    public  static void inOrder(Node root){
+        if ( root != null )
         {
             inOrder(root.leftChild);
             System.out.printf("%d\t",root.getData());
@@ -118,7 +121,7 @@ class Tree{
 
 
     public static void preOrder(Node root){
-        while (root != null) {
+        if (root != null) {
             System.out.printf("%d\t", root.getData());
             preOrder(root.leftChild);
             preOrder(root.rightChild);
@@ -126,8 +129,8 @@ class Tree{
     }
 
 
-    public static void postOrder(Node root){
-        while( root != null )
+    public static  void postOrder(Node root){
+        if( root != null )
         {
             postOrder(root.leftChild);
             postOrder(root.rightChild);
