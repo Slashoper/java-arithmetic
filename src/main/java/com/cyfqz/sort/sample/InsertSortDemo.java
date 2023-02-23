@@ -1,4 +1,4 @@
-package org.example.sort.sample;
+package com.cyfqz.sort.sample;
 
 public class InsertSortDemo {
     public static void main(String[] args) {

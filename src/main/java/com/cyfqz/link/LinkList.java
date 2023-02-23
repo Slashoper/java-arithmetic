@@ -1,4 +1,4 @@
-package org.example.link;
+package com.cyfqz.link;
 
 /**
  * 明白节点的抽象以及head 指针的使用,head 指针指向第一个节点

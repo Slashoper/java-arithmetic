@@ -1,4 +1,4 @@
-package org.example.stack;
+package com.cyfqz.stack;
 
 /**
  *

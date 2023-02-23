@@ -1,4 +1,4 @@
-package org.example.io;
+package com.cyfqz.io;
 
 import java.util.Scanner;
 

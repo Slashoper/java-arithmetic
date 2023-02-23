@@ -1,4 +1,4 @@
-package org.example.array;
+package com.cyfqz.array;
 
 public class SpareArrayDemo {
     public static void main(String[] args) {

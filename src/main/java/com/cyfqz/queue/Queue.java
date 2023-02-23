@@ -1,4 +1,4 @@
-package org.example.queue;
+package com.cyfqz.queue;
 
 public class Queue {
     private int[] data;

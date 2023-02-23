@@ -1,4 +1,4 @@
-package org.example.tree;
+package com.cyfqz.tree;
 
 import java.util.Scanner;
 

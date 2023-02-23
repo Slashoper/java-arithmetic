@@ -1,4 +1,4 @@
-package org.example.sort.senior;
+package com.cyfqz.sort.senior;
 
 import java.util.Random;
 

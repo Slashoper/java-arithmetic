@@ -1,4 +1,4 @@
-package org.example.graph;
+package com.cyfqz.graph;
 
 import java.util.ArrayList;
 import java.util.List;
