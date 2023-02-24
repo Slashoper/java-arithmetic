@@ -6,6 +6,21 @@ import java.util.List;
 public class GraphDemo {
     public static void main(String[] args) {
         List list =new ArrayList<>(10);
+        Graph graph = new Graph();
+        graph.addVerterx('A');//0
+        graph.addVerterx('B');//1
+        graph.addVerterx('C');//2
+        graph.addVerterx('F');//3
+        graph.addVerterx('E');//4
+        graph.addEdg(0,1);
+        graph.addEdg(1,2);
+        graph.addEdg(2,3);
+        graph.addEdg(3,4);
+        graph.addEdg(4,0);
+        System.out.println("深度优先遍历为：");
+        graph.dfs();
+        System.out.println("广度优先遍历为：");
+        graph.bfs();
     }
 }
 
@@ -43,14 +58,14 @@ class Vertex{
 }
 
 class Graph{
-    private static final int maxVerterxSize = 20;
-    private Vertex[] vertices;
-    private int[][] adjMetrix;
-    private int nVerterx;
+    private static final int maxVerterxSize = 20; // 图的顶点个数
+    private Vertex[] vertices; // 用数组保存顶点数
+    private int[][] adjMetrix; // 用二位数组保存邻接矩阵
+    private int nVerterx; // 当前顶点个数
 
-    private Queue queue;
+    private Queue queue;// 图广度优先遍历
 
-    private Stack stack;
+    private Stack stack; // 图深度优先遍历
 
     public Graph(){
         vertices = new Vertex[maxVerterxSize];
@@ -111,6 +126,7 @@ class Graph{
     public void dfs(){
         Vertex vertex = vertices[0];
         vertex.setVisited(true);
+        this.displayVerterx(0);
         this.stack.push(0);
         while (!this.stack.isEmpty()) {
             int v = this.getAdUnvisited(this.stack.peek());
@@ -135,10 +151,22 @@ class Graph{
      */
     public void bfs(){
         Vertex vertex = vertices[0];
+        vertex.setVisited(true);
         displayVerterx(0);
         this.queue.enQueue(0);
+        int v2;
+        while(! queue.isEmpty()) {
+            int v = queue.deQueue();
+            while ( (v2=getAdUnvisited(v)) != -1) {
+                queue.enQueue(v2);
+                displayVerterx(v2);
+                vertices[v2].setVisited(true);
+            }
+        }
 
-        getAdUnvisited(0);
+        for(Vertex v : vertices){
+            v.setVisited(false);
+        }
     }
 
 

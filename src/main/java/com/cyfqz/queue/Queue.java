@@ -1,5 +1,8 @@
 package com.cyfqz.queue;
 
+/**
+ * 单向队列
+ */
 public class Queue {
     private int[] data;
     private int front;
@@ -17,15 +20,13 @@ public class Queue {
     public void enQueue(int data){
         if(isFull())
             throw new RuntimeException("the queue is full ,cannot enqueue");
-        rear = (rear+1) % this.maxsize;
-        this.data[rear] = data;
+        this.data[++rear] = data;
     }
 
     public int deQueue(){
         if(isEmpty())
             throw  new RuntimeException("the queue is empty!");
-        front ++;
-        return data[front];
+        return data[++front];
     }
 
     public boolean isEmpty(){
@@ -33,7 +34,7 @@ public class Queue {
     }
 
     public boolean isFull(){
-        return front == (this.rear+1)% this.maxsize;
+        return rear == maxsize - 1;
     }
 
     public static void main(String[] args) {
